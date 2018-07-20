@@ -12,6 +12,7 @@ protocol GitHubRequest {
     var baseURL: URL{get}
     var path: String{get}
     var method: HTTPMethod{get}
+    var queryItems: [URLQueryItem]{ get}
 }
 
 extension GitHubRequest {

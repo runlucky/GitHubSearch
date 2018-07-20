@@ -15,7 +15,7 @@ struct Repository : Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case fullName = "funn_name"
+        case fullName = "full_name"
         case owner
     }
 }
