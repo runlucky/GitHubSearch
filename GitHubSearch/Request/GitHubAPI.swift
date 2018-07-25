@@ -9,17 +9,16 @@
 import Foundation
 
 final class GitHubAPI {
-    struct SearchRepositories: GitHubRequest{
+    struct SearchRepositories: GitHubRequest {
         let keyword: String
         typealias Response = SearchResponse<Repository>
-        
+
         var path: String { return "/search/repositories" }
-        
+
         var method: HTTPMethod { return .get }
-        
+
         var queryItems: [URLQueryItem] {
             return [URLQueryItem(name: "q", value: keyword)]
         }
-        
     }
 }
