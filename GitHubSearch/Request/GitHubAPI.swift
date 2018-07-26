@@ -21,4 +21,15 @@ final class GitHubAPI {
             return [URLQueryItem(name: "q", value: keyword)]
         }
     }
+
+    struct SearchUsers: GitHubRequest {
+        let keyword: String
+        typealias Response = String
+
+        var path: String { return "/search/users" }
+        var method: HTTPMethod { return .get }
+        var queryItems: [URLQueryItem] {
+            return [URLQueryItem(name: "q", value: keyword)]
+        }
+    }
 }
