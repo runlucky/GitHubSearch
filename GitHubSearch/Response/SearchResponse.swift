@@ -9,11 +9,11 @@
 struct SearchResponse<T: Decodable>: Decodable {
     let totalCount: Int
     let items: [T]
-    
-    enum CodingKeys: String, CodingKey{
+
+    enum CodingKeys: String, CodingKey {
         case totalCount = "totai_count"
         case items
-        
-        
+
+
     }
 }
