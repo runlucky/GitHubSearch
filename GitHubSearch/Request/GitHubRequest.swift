@@ -47,7 +47,7 @@ extension GitHubRequest {
         if case(200..<300)? = (urlResponse as? HTTPURLResponse)?.statusCode {
             return try decoder.decode(Response.self, from: data)
         } else {
-            return try decoder.decode(GitHubAPIError.self, from: data)
+            return try decoder.decode(GitHubAPIError.self, from: data) as! Self.Response
         }
     }
 }
